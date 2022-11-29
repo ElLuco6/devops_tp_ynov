@@ -26,3 +26,19 @@ je privilègie alors les heures creuse.
 je suis la meme procédure que ci-dessus en modifiant les branches de telle sorte que:
 
 ma branche -> master ->ssr ->-> génération du site -> mise a jour sur le serveur de prod.
+
+5)Processus de release:
+
+-1 un problème ou un ajout a été demander ou repérer par une perssone x.
+-2 je fais la tache 
+-3 je montre mon travaille a éric (mon senior)
+-4 si c'est valider je passe sur le serveur de test puis sur le serveur de prod
+
+6) moyen de test
+
+apres avoir developper sur ma branche je test systématiquement le site sur les différentes branches.
+
+je fais aussi des backup du site en cas de problème afin de pouvoir le remettre en ligne le plus rapidement possible en cas de problème.
+7)
+
+8)git
