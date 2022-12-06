@@ -8,3 +8,9 @@ echo test > test.txt
 ls
 exit   
 4/ docker rm zuzu --force  
+
+5/docker run hello-world
+docker run -d -p 8080:80 httpd 
+
+
+4)
