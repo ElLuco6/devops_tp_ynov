@@ -1,0 +1,34 @@
+Q1- Pourquoi selon-vous est-il important que votre application soit stateless
+En cas d'affluence sur le container, l'utilisateur ne va pas forcément se connecter au même pod généré par Scaleway, les données peristantes, si elles existent, ne seront alors pas retrouvables.
+
+Q2 - Est-il possible de créer un volume et de le lier à ses containers serverless ?
+Oui, cela peut permettre de stocker des données et de pouvoir y accéder.
+
+Q3 - Est-ce que ma base sqlite est partagée si plusieurs instances de mon application sont lancées ?
+Non, elles sont uniques à l'utilisateur
+
+Q4 - Comparez le coût d'une application déployée en mode Serverless VS déployée en mode classique (vm/serveur dédié)
+Architecture serverless: ~= 40€ en supposant 2 millions de requêtes par mois
+Serveur dédié OVH: minimum 50€ mais aucune limite de requêtes
+
+Q5 - Quels sont les points de vigilance/d'attention que vous pouvez déterminer d'un tel déploiement
+Attention à ne pas déployer les fichiers inutiles et lourd comme le dossier node_modules.
+
+Q6 - Proposez une architecture (schéma) en utilisant des services Scaleway permettant de déployer votre application mais en utilisant une base de données dans le cloud (en partant du principe que vous allez avoir plusieurs instances de votre application)
+sequence
+App -> Server
+Server -> VPC
+Server -> Stockage
+VPC -> Database
+
+Q7 - pourquoi en serverless il faudrait utiliser une base de données dans le cloud ?
+En utilisant une base de données dans le cloud, on assure le partage de données entre les différentes instance de l'app.
+De plus, le serveur est continuellement disponible et la scalabilité de la base est faite automatiquement.
+
+Q8 - Quels sont les avantages et les inconvénients à déployer ses solutions en mode "full cloud" ?
+La scalabilité de l'application et l'evolutivité qu'elle acquiert en étant basée sur le cloud sont de gros avantages à cette solution. Les ressources de l'application sont gérée automatiquement en fonction de la charge de travail. La solution est aussi très facile à faire évoluer. 
+Le coût forme un avantage comme un inconvénient: s'il est mal géré les dépenses peuvent devenir excessives, tandis qu'à bas échelle la solution propose des service de qualité à moindre coût.
+En étant portée sur le cloud, une solution devient dépendante de celui-ci, comme la sécurité: celle-ci est gérée par le tier, il faut donc faire confiance à celui-ci.
+
+Q9 - Savez-vous si vos entreprises d'alternances actuelles utilisent des services cloud ? Si oui lesquels et dans quel but ?
+Oui, elle utilise Azure pour porter l'application sur le cloud. On déploie la solution, un portail web, sur Azure.
